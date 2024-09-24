@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Por una ciudad mas segura </title>
+    <title> Denuncias publicas </title>
    <link rel="stylesheet" href="/estilos/style.css">
 </head>
 <body>
 
-<div class="titulo">    
-<h1> - Nuestra ciudad mas segura - </h1>
-<h4 class="subTitle" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore fuga asperiores voluptate eum, veniam rerum.</h4>
-</div> 
-<!-- Las tres paginas -->
-<!-- Informacion -->
-<!-- Hacer una denuncia -->
-<!-- Contacto del personal de seguridad -->
+    <!-- PORTADA DE LA PAGINA -->
+    <div class="portada">
+        <div class="contenido-portada">
+            <div class="texto-portada">
+                <h1 id="tituloPortada">Merecemos una <br> sociedad que sea <br> mas segura.</h1>
+                <h4 id="subTitulo">Debemos ser escuchados, hace tu denuncia. </h4>
+            </div>
+            <img id="imagenPortada" src="/multimedia/logoPortada.png" alt="Logo de portada">
+        </div>
+    </div>
+    
+    <!-- NAV LIST -->
 <nav>
     <ul>
         <li><a href="/infoPage.html">Información</a></li>
@@ -24,24 +28,31 @@
     </ul>
 </nav>
 
-<!-- Contador de delitos -->
- <h2> - Estadistica de denuncias - </h2>
-<!-- Tres cajas -->
-<!-- [Robos] - [Accidentes] - [Violencias] -->
-<div class="container">
-    <div class="box">
-        <h3>Robos</h3>
-        <p>Cantidad: <span id="robos">455</span></p>
+
+
+<!-- ESTADISTICAS -->
+<section class="estadisticas">
+    <h2 class="tituloSecond"> Estadística de Denuncias </h2>
+
+    <div class="container">
+        <div class="box">
+            <h3>Robo</h3>
+            <p>Cantidad: <span id="robos">455</span></p>
+            <img src="https://img.icons8.com/?size=100&id=UFF4yD0IJRn7&format=png&color=000000" alt="">
+        </div>
+        <div class="box">
+            <h3>Accidente</h3>
+            <p>Cantidad: <span id="accidentes">963</span></p>
+            <img src="https://img.icons8.com/?size=100&id=aROSi61BuEq0&format=png&color=000000" alt="">
+        </div>
+        <div class="box">
+            <h3>Violencia</h3>
+            <p>Cantidad: <span id="violencias">1023</span></p>
+            <img src="https://img.icons8.com/?size=100&id=MzSqizn3XViD&format=png&color=000000" alt="">
+        </div>
     </div>
-    <div class="box">
-        <h3>Accidentes</h3>
-        <p>Cantidad: <span id="accidentes">963</span></p>
-    </div>
-    <div class="box">
-        <h3>Violencias</h3>
-        <p>Cantidad: <span id="violencias">1023</span></p>
-    </div>
-</div>
+</section>
+
 
 
 </body>

@@ -9,19 +9,22 @@
 
     <h2> Pagina de denuncias </h2>
 
-<form action="">
-    <label for="fnName">Nombre</label><br>
-    <input type="text" id="fnName" name="nombre"> <br>
-<br>
-    <Label for="lnName">Apellido</Label><br>
-    <input type="text" id="lnName" name="apellido"><br>
-<br>
-    <Label for="dnName">Tipo de denuncia</Label><br>
-    <!-- Textarea -->
-    <input type="text" id="dnName" name="denuncia"><br>
-<br>
-    <input type="submit" vale="Denunciar">
-</form>
+    <form action="">
+        <label for="fnName">Nombre:</label> <br>
+        <input type="text" id="fnName" name="nombre" placeholder="Ingrese su nombre completo"><br>
+        <br>
+    
+        <label for="lnName">Apellido:</label> <br>
+        <input type="text" id="lnName" name="apellido" placeholder="Ingrese su apellido completo"><br>
+        <br>
+    
+        <label for="dnName">Describa su denuncia:</label> <br>
+        <textarea id="dnName" name="denuncia" rows="5" cols="50" placeholder="Por favor, sea lo más detallado posible"></textarea> <br>
+        <br>
+    
+       
+        <button onclick="alert('Una denuncia es poner conocimiento sobre la presunta comisión de un delito, infracción o hecho ilícito. Para mas informacion ir a: ')">Enviar Denuncia</button>
+    </form>
 
 <a href="/index.html">
     <h3>Volver al inicio</h3>
