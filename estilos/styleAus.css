@@ -1,0 +1,81 @@
+/* Portada */
+.portada {
+  background-color: #ffdd91; 
+  padding: 25px 20px; /* Espaciado superior e inferior */
+  text-align: center;
+}
+
+.portada h1#tituloPortada {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px; /* Tamaño de letra moderado */
+  color: #3c4267; /* Color gris oscuro para el título */
+  margin: 20px 0; /* Espacio alrededor del título */
+}
+
+/* Contenedor */
+
+#about-us {
+  padding: 30px;
+  background-color: #f9f9f9;
+  
+}
+
+#about-us .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about-us h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: #555;
+}
+
+#about-us p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+
+/* FOOTER */
+.footer {
+  background-color: #ffdd91;
+  color: #ad95a4;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.container-footer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #ad95a4;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}

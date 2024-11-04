@@ -7,29 +7,142 @@
 </head>
 <body>
 
-    <h2> Pagina de denuncias </h2>
+<h2>Página de Denuncias</h2>
 
-    <form action="">
-        <label for="fnName">Nombre:</label> <br>
-        <input type="text" id="fnName" name="nombre" placeholder="Ingrese su nombre completo"><br>
-        <br>
-    
-        <label for="lnName">Apellido:</label> <br>
-        <input type="text" id="lnName" name="apellido" placeholder="Ingrese su apellido completo"><br>
-        <br>
-    
-        <label for="dnName">Describa su denuncia:</label> <br>
-        <textarea id="dnName" name="denuncia" rows="5" cols="50" placeholder="Por favor, sea lo más detallado posible"></textarea> <br>
-        <br>
-    
-       
-        <button onclick="alert('Una denuncia es poner conocimiento sobre la presunta comisión de un delito, infracción o hecho ilícito. Para mas informacion ir a: ')">Enviar Denuncia</button>
-    </form>
+<form class="contact-form" onsubmit="return validar()" id="frm">
+    <div class="form-group"> 
+        <label for="nombre">Nombre:</label> <br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo"><br><br>
+    </div>
+
+    <div class="form-group">
+        <label for="apellido">Apellido:</label> <br>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido completo"><br><br>
+    </div>
+
+    <div class="form-group">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria">
+            <option value="">Seleccione una categoría</option>
+            <option value="Robo">Robo</option>
+            <option value="Medio Ambiente">Medio Ambiente</option>
+            <option value="Violencia">Violencia</option>
+            <option value="Estafa">Estafa</option>
+            <option value="Consumidor">Consumidor</option>
+            <option value="Otro">Otro</option>
+        </select><br><br>
+    </div>
+
+    <div class="form-group">
+        <label for="denuncia">Describa su denuncia:</label> <br>
+        <textarea id="denuncia" name="denuncia" rows="5" cols="50" placeholder="Por favor, sea lo más detallado posible"></textarea><br><br>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" id="email" placeholder="Ingrese su email"><br><br>
+    </div>
+
+    <!-- Check de términos y condiciones -->
+    <div class="form-group">
+        <input type="checkbox" id="terminos" name="terminos">
+        <label for="terminos">Acepto los términos y condiciones</label><br><br>
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Enviar Denuncia</button>
+    </div>
+</form>
+
+<ul id="listErrores"></ul>
+<ul id="listMensajes"></ul>
+
+<script>
+    function validar() {
+        var isValid = true;
+        var nombre = document.getElementById("nombre");
+        var apellido = document.getElementById("apellido");
+        var categoria = document.getElementById("categoria");
+        var email = document.getElementById("email");
+        var denuncia = document.getElementById("denuncia");
+        var terminos = document.getElementById("terminos");
+        
+        // Array para errores
+        let errores = [];
+        listErrores.innerHTML = "";
+
+        nombre.classList.remove("error");
+        apellido.classList.remove("error");
+        categoria.classList.remove("error");
+        email.classList.remove("error");
+        denuncia.classList.remove("error");
+
+        // Validación de nombre
+        if (nombre.value === "") {
+            errores.push("Debe ingresar el nombre");
+            nombre.classList.add("error");
+            isValid = false;
+        }
+
+        // Validación de apellido
+        if (apellido.value === "") {
+            errores.push("Debe ingresar el apellido");
+            apellido.classList.add("error");
+            isValid = false;
+        }
+
+        // Validación de categoría
+        if (categoria.value === "") {
+            errores.push("Debe seleccionar una categoría");
+            categoria.classList.add("error");
+            isValid = false;
+        }
+
+        // Validación de longitud de denuncia
+        if (denuncia.value.length > 200) {
+            errores.push("La descripción no debe superar los 200 caracteres");
+            denuncia.classList.add("error");
+            isValid = false;
+        }
+
+        // Validación de email
+        if (email.value && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
+            errores.push("Debe ingresar un email válido");
+            email.classList.add("error");
+            isValid = false;
+        }
+
+        // Validación de términos y condiciones
+        if (!terminos.checked) {
+            errores.push("Debe aceptar los términos y condiciones");
+            isValid = false;
+        }
+
+        if (isValid) {
+            agregarMensaje(nombre.value, categoria.value, email.value);
+            return true;
+        } else {
+            mostrarErrores(errores);
+            return false;
+        }
+    }
+
+    function agregarMensaje(nombre, categoria, email) {
+        const listMensajes = document.getElementById("listMensajes");
+        const newMessage = document.createElement("li");
+        newMessage.textContent = `${nombre} - Categoría: "${categoria}". Contacto: ${email}.`;
+        listMensajes.appendChild(newMessage);
+    }
+
+    function mostrarErrores(errores) {
+        let listErrores = document.getElementById("listErrores");
+        listErrores.innerHTML = errores.map(error => `<li>${error}</li>`).join("");
+    }
+</script>
 
 <a href="/index.html">
     <h3>Volver al inicio</h3>
 </a>
 
-<!-- Una denuncia es poner en conocimiento -->
 </body>
 </html>
