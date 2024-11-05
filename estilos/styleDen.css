@@ -1,0 +1,114 @@
+body {
+    background-color: #514f4f; /* Color de fondo para todo el body */
+}
+
+.titulo {
+    margin-top: 100px;
+    padding-top: 20px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #3c4267;
+    color: white;
+    border-radius: 20px;
+}
+
+.contact-form {
+    margin-top: 50px;
+    margin-left: 600px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+form {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    width: 600px;
+    height: auto; /* Cambia a auto para que ajuste al contenido */
+    margin-right: 500px;
+    padding: 20px;
+    border: 2px solid #0d0d0d;
+    border-radius: 8px;
+    background-color: #ffdd91;
+}
+
+label {
+    color: rgb(15, 15, 15);
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; 
+    transform: scale(1.2); 
+}
+
+label.check {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #1e1c1c; 
+    border-radius: 6px;
+    box-sizing: border-box; 
+}
+
+input.error, textarea.error {
+    border-color: rgb(255, 0, 38); 
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff; 
+    outline: none; 
+}
+
+
+#listErrores {
+    color: white;
+}
+
+#listMensajes {
+    color: white;
+}
+
+.bt {
+    margin-top: 10px;
+    margin-left: 395px;
+    color: #3c4267(21, 106, 21);
+    padding: 15px;
+    background-color: #f1f0f0;
+    
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Efecto hover para el botón */
+.bt:hover {
+    background-color: #3c4267;
+    color: white;
+}
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-decoration: underline;
+}
+
+.men {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    margin-left: 500px;
+    margin-right: 550px;
+    padding: 10px;
+    text-align: center;
+    background-color: #3c4267;
+    border-radius: 20px;
+}
+

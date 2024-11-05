@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denuncia</title>
+    <link rel="stylesheet" href="/estilos/styleDen.css">
+    <title>Document</title>
 </head>
 <body>
-
-<h2>Página de Denuncias</h2>
+    <div class="titulo">
+        <h2>Página de Denuncias</h2>
+    </div>
+    
 
 <form class="contact-form" onsubmit="return validar()" id="frm">
     <div class="form-group"> 
@@ -43,19 +46,22 @@
         <input type="text" name="email" id="email" placeholder="Ingrese su email"><br><br>
     </div>
 
-    <!-- Check de términos y condiciones -->
+    
     <div class="form-group">
         <input type="checkbox" id="terminos" name="terminos">
-        <label for="terminos">Acepto los términos y condiciones</label><br><br>
+        <label class="check" for="terminos">Acepto los terminos y condiciones </label><br><br>
     </div>
 
     <div class="form-group">
-        <button type="submit">Enviar Denuncia</button>
+        <button class="bt" type="submit">Enviar Denuncia</button>
     </div>
 </form>
 
-<ul id="listErrores"></ul>
+<div class="men">
+    <ul id="listErrores"></ul>
 <ul id="listMensajes"></ul>
+</div>
+
 
 <script>
     function validar() {
@@ -139,10 +145,15 @@
         listErrores.innerHTML = errores.map(error => `<li>${error}</li>`).join("");
     }
 </script>
+<div class="Inicio">
+    <a href="/index.html">
+        <h3>Volver al inicio</h3>
+    </a>
+</div>
 
-<a href="/index.html">
-    <h3>Volver al inicio</h3>
-</a>
 
 </body>
 </html>
+
+   
+
