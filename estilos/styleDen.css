@@ -2,6 +2,11 @@ body {
     background-color: #f9f9f9; /* Color de fondo para todo el body */
 }
 
+h5{
+    color: white;
+    
+}
+
 .titulo {
     margin-top: 100px;
     padding-top: 20px;

@@ -12,7 +12,7 @@
     </div>
     
 
-<form class="contact-form" onsubmit="return validar()" id="frm">
+<form class="contact-form" onsubmit="return validar()" id="frm" novalidate>
     <div class="form-group"> 
         <label for="nombre">Nombre:</label> <br>
         <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo"><br><br>
@@ -58,7 +58,8 @@
 </form>
 
 <div class="men">
-    <ul id="listErrores"></ul>
+<ul id="listErrores"></ul>
+<h5>Historial de denuncias:</h5>
 <ul id="listMensajes"></ul>
 </div>
 
@@ -76,6 +77,7 @@
 
 <script>
     function validar() {
+        
         var isValid = true;
         var nombre = document.getElementById("nombre");
         var apellido = document.getElementById("apellido");
@@ -86,6 +88,7 @@
         
         // Array para errores
         let errores = [];
+        const listErrores = document.getElementById("listErrores");
         listErrores.innerHTML = "";
 
         nombre.classList.remove("error");
@@ -137,11 +140,14 @@
 
         if (isValid) {
             agregarMensaje(nombre.value, categoria.value, email.value);
-            return true;
+            limpiarCampos();
         } else {
             mostrarErrores(errores);
-            return false;
+           
         }
+
+        return false;
+
     }
 
     function agregarMensaje(nombre, categoria, email) {
@@ -154,7 +160,32 @@
     function mostrarErrores(errores) {
         let listErrores = document.getElementById("listErrores");
         listErrores.innerHTML = errores.map(error => `<li>${error}</li>`).join("");
+
     }
+
+    function limpiarCampos(){
+    document.getElementById("nombre").value = "";
+      document.getElementById("apellido").value = "";
+      document.getElementById("categoria").value = "";
+      document.getElementById("denuncia").value = "";
+      document.getElementById("email").value = "";
+      
+      const errores = document.querySelectorAll(".error-message");
+      errores.forEach(error => error.textContent = "");
+
+      
+      const inputs = document.querySelectorAll("input, textarea");
+      inputs.forEach(input => input.classList.remove("error"));
+
+      document.getElementById("nombre").focus();
+
+    }
+
+
+
+
+
+
 </script>
 
 
