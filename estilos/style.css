@@ -192,11 +192,9 @@ nav a:hover::after {
 
 button.prev, button.next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    cursor: pointer;
+    top: 60%;
+    background-color: #ffdd91;
+    border: #3c4267;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;

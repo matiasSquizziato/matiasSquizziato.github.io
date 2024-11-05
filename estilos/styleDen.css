@@ -1,5 +1,5 @@
 body {
-    background-color: #514f4f; /* Color de fondo para todo el body */
+    background-color: #f9f9f9; /* Color de fondo para todo el body */
 }
 
 .titulo {
@@ -12,6 +12,8 @@ body {
     background-color: #3c4267;
     color: white;
     border-radius: 20px;
+    border: 2px solid #0d0d0d;
+    border-radius: 8px;
 }
 
 .contact-form {
@@ -95,11 +97,7 @@ input:focus, textarea:focus {
     color: white;
 }
 
-h3 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    text-decoration: underline;
-}
+
 
 .men {
     font-family: Arial, Helvetica, sans-serif;
@@ -110,5 +108,42 @@ h3 {
     text-align: center;
     background-color: #3c4267;
     border-radius: 20px;
+    border: 2px solid #0d0d0d;
+    border-radius: 8px;
 }
 
+/* FOOTER */
+.footer {
+    margin-top: 80px;
+    background-color: #ffdd91;
+    color: #ad95a4;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.container-footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #ad95a4;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}

@@ -72,7 +72,7 @@
 <h2 class="tituloSecond"> Ultimas noticias</h2>
 <div class="carrusel">
     <div class="carrusel-contenido">
-        <div class="carrusel-item activo">
+        <div class="carrusel-item">
             <img src="https://pxb.cdn.eldiariodelarepublica.com/republica/112024/1730683916991.webp?cw=770&ch=440&extw=jpg" alt="Denuncia 1">
             <p>Sospechan que policías secuestraban elementos sin la orden de un juez</p>
         </div>
@@ -109,8 +109,7 @@
     
     function cambiarCarrusel(direccion) {
         const items = document.querySelectorAll('.carrusel-item');
-        items[indiceActual].classList.remove('activo');
-    
+      
         indiceActual += direccion;
     
         if (indiceActual < 0) {
@@ -118,9 +117,9 @@
         } else if (indiceActual >= items.length) {
             indiceActual = 0;
         }
-    
-        items[indiceActual].classList.add('activo');
-        document.querySelector('.carrusel-contenido').style.transform = 'translateX(' + (-indiceActual * 100) + '%)';
+        
+    //cambio la posicion (se desplaza un 100%)
+        document.querySelector('.carrusel-contenido').style.transform = 'translateX(' + (-indiceActual *100) + '%)';
     }
     </script>
 
