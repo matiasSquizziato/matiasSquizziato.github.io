@@ -68,23 +68,11 @@
 </section>
 
 
-<!-- Carrusel -->
-<h2 class="tituloSecond"> Ultimas noticias</h2>
+<!-- Carrusel --> 
+ <!-- Agregarke set timer -->
+<h2 class="tituloSecond">Últimas noticias</h2>
 <div class="carrusel">
-    <div class="carrusel-contenido">
-        <div class="carrusel-item">
-            <img src="https://pxb.cdn.eldiariodelarepublica.com/republica/112024/1730683916991.webp?cw=770&ch=440&extw=jpg" alt="Denuncia 1">
-            <p>Sospechan que policías secuestraban elementos sin la orden de un juez</p>
-        </div>
-        <div class="carrusel-item">
-            <img src="https://pxb.cdn.eldiariodelarepublica.com/republica/112024/1730650708581.webp?cw=770&ch=440&extw=jpg" alt="Denuncia 2">
-            <p>Convocan a marchar para pedir que el entrenador acusado de violador vuelva al Penal</p>
-        </div>
-        <div class="carrusel-item">
-            <img src="https://pxb.cdn.eldiariodelarepublica.com/republica/102024/1729340639398.webp?cw=770&ch=440&extw=jpg" alt="Denuncia 3">
-            <p>Los últimos incendios provocaron daños de una magnitud histórica</p>
-        </div>
-    </div>
+    <div class="carrusel-contenido"></div>
     <button class="prev" onclick="cambiarCarrusel(-1)">&#10094;</button>
     <button class="next" onclick="cambiarCarrusel(1)">&#10095;</button>
 </div>
@@ -105,23 +93,75 @@
 </footer>
 
 <script>
+    //este es mi arreglo, cada objeto tiene tres atributos
+    const itemsCarrusel = [
+        {
+            img: "https://pxb.cdn.eldiariodelarepublica.com/republica/112024/1730683916991.webp?cw=770&ch=440&extw=jpg",
+            alt: "Imagen ilustrativa de una noticia",
+            texto: "Sospechan que policías secuestraban elementos sin la orden de un juez"
+        },
+        {
+            img: "https://pxb.cdn.eldiariodelarepublica.com/republica/112024/1730650708581.webp?cw=770&ch=440&extw=jpg",
+            alt: "Imagen ilustrativa de una noticia",
+            texto: "Convocan a marchar para pedir que el entrenador acusado de violador vuelva al Penal"
+        },
+        {
+            img: "https://pxb.cdn.eldiariodelarepublica.com/republica/102024/1729340639398.webp?cw=770&ch=440&extw=jpg",
+            alt: "Imagen ilustrativa de una noticia",
+            texto: "Los últimos incendios provocaron daños de una magnitud histórica"
+        }
+    ];
+
     let indiceActual = 0;
-    
+
+    function mostrarCarrusel() {
+        //obtengo el elemento html
+        const carruselContenido = document.querySelector('.carrusel-contenido');
+        
+        //borro el elemento actual
+        carruselContenido.innerHTML = '';
+        
+        //creo el elemento actual del carrusel
+                    //arreglo       //indice declarado arriba
+        const item = itemsCarrusel[indiceActual];
+
+        //creo el div y le agrego un objeto del arreglo
+        const divItem = document.createElement('div');
+
+        //uso classList para agregar el elemento al div 
+        divItem.classList.add('carrusel-item');
+        
+        //creo la imagen 
+        const img = document.createElement('img');
+        img.src = item.img;
+        img.alt = item.alt;
+        
+        //creo el texto
+        const p = document.createElement('p');
+        p.textContent = item.texto;
+        
+        //agrego los elementos al document
+        divItem.appendChild(img);
+        divItem.appendChild(p);
+        carruselContenido.appendChild(divItem);
+    }
+
+    //funcion para los bt
     function cambiarCarrusel(direccion) {
-        const items = document.querySelectorAll('.carrusel-item');
-      
         indiceActual += direccion;
-    
+
         if (indiceActual < 0) {
-            indiceActual = items.length - 1;
-        } else if (indiceActual >= items.length) {
+            indiceActual = itemsCarrusel.length - 1;
+        } else if (indiceActual >= itemsCarrusel.length) {
             indiceActual = 0;
         }
         
-    //cambio la posicion (se desplaza un 100%)
-        document.querySelector('.carrusel-contenido').style.transform = 'translateX(' + (-indiceActual *100) + '%)';
+        mostrarCarrusel();
     }
-    </script>
+
+    // Inicializa el carrusel
+    document.addEventListener('DOMContentLoaded', mostrarCarrusel);
+</script>
 
 
 </body>

@@ -165,6 +165,8 @@ nav a:hover::after {
 .footer-links a:hover {
     color: #fff;
 }
+
+
 /* Carrusel */
 
 .carrusel {
@@ -176,7 +178,7 @@ nav a:hover::after {
 
 .carrusel-contenido {
     display: flex;
-    
+    transition: transform 0.5s ease-in-out;
 }
 
 .carrusel-item {
@@ -190,20 +192,30 @@ nav a:hover::after {
     height: auto;
 }
 
+/* Botones */
+
 button.prev, button.next {
     position: absolute;
-    top: 60%;
+    top: 50%;
+    transform: translateY(-50%); 
     background-color: #ffdd91;
-    border: #3c4267;
+    border: none;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
+    cursor: pointer;
+    color: #3c4267;
 }
 
+
 button.prev {
-    left: 10px;
+    left: 0; 
 }
 
 button.next {
-    right: 10px;
+    right: 0; 
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #ffc107;
 }
