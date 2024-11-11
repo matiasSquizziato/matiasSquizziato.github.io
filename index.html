@@ -69,7 +69,7 @@
 
 
 <!-- Carrusel --> 
- <!-- Agregarke set timer -->
+
 <h2 class="tituloSecond">Últimas noticias</h2>
 <div class="carrusel">
     <div class="carrusel-contenido"></div>
@@ -159,8 +159,26 @@
         mostrarCarrusel();
     }
 
-    // Inicializa el carrusel
-    document.addEventListener('DOMContentLoaded', mostrarCarrusel);
+    //funcion setInterval para el carrusel
+    function setIntervalCarrusel(){
+        setInterval(()=> {
+            //avanza a otro elemento 
+            cambiarCarrusel(1);
+//cada cuatro segundos
+        }, 4000);
+    }
+
+
+
+    // Inicializa el carrusel y el setInterval del carrusel
+    document.addEventListener('DOMContentLoaded', () => {
+        mostrarCarrusel();
+        setIntervalCarrusel();
+    } );
+    
+
+
+
 </script>
 
 
