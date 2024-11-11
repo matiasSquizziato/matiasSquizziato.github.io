@@ -195,16 +195,19 @@ nav a:hover::after {
 /* Botones */
 
 button.prev, button.next {
+    border: 20px;
+    margin: 10px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%); 
-    background-color: #ffdd91;
+    background-color: #3c4267;
     border: none;
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    color: #3c4267;
+    color: #ffdd91;
+    
 }
 
 
